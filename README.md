@@ -32,3 +32,15 @@ Hint: gc: refc; opt: none (DEBUG BUILD, `-d:release` generates faster code)
 Hint: /home/efm/git/nim-learning/xiny  [Exec]
 We have Milk and 3 other drinks
 ```
+
+The `-r` flag tells the compiler to run the resulting executable. The second compliation is much faster because the compiler is smart enough to know that nothing has changed.
+
+```
+nim c -r xiny.nim 
+Hint: used config file '/home/efm/.choosenim/toolchains/nim-1.6.14/config/nim.cfg' [Conf]
+Hint: used config file '/home/efm/.choosenim/toolchains/nim-1.6.14/config/config.nims' [Conf]
+Hint: gc: refc; opt: none (DEBUG BUILD, `-d:release` generates faster code)
+9938 lines; 0.029s; 8.668MiB peakmem; proj: /home/efm/git/nim-learning/xiny.nim; out: /home/efm/git/nim-learning/xiny [SuccessX]
+Hint: /home/efm/git/nim-learning/xiny  [Exec]
+We have Milk and 3 other drinks
+```
