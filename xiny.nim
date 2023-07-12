@@ -65,3 +65,25 @@ let myDrink = drinks[2]
 
 ################### First Compile
 
+#
+# Defnining Types
+#
+
+# Defining your own types puts the compiler to work for you. It's what makes
+# static typing powerful and usewful.
+
+type
+  Name = string # A type alias gives you a new type that is interchangable
+  Age = int     # with the old type but is more descriptive
+  Person = tuple[name: Name, age: Age] # Define data structures too.
+  AnotherSyntax = tuple
+    fieldOne: string
+    secondField: int
+
+var
+  john: Person = (name: "John B.", age: 17)
+  newage: int = 18 # It would be better to use Age than intt
+
+john.age = newage # but still works because int and Age are synonyms.
+
+## Second compile

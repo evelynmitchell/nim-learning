@@ -44,3 +44,29 @@ Hint: gc: refc; opt: none (DEBUG BUILD, `-d:release` generates faster code)
 Hint: /home/efm/git/nim-learning/xiny  [Exec]
 We have Milk and 3 other drinks
 ```
+
+
+In the second compilation, the compiler notices that we haven't used many of the variables we declarede.
+
+```
+nim c -r xiny.nim
+Hint: used config file '/home/efm/.choosenim/toolchains/nim-1.6.14/config/nim.cfg' [Conf]
+Hint: used config file '/home/efm/.choosenim/toolchains/nim-1.6.14/config/config.nims' [Conf]
+..........................................................
+/home/efm/git/nim-learning/xiny.nim(15, 3) Hint: 'letter' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(17, 3) Hint: 'nLength' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(18, 3) Hint: 'boat' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(19, 3) Hint: 'truth' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(22, 3) Hint: 'legs' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(23, 3) Hint: 'arms' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(24, 3) Hint: 'aboutPi' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(27, 3) Hint: 'debug' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(64, 5) Hint: 'myDrink' is declared but not used [XDeclaredButNotUsed]
+/home/efm/git/nim-learning/xiny.nim(79, 3) Hint: 'AnotherSyntax' is declared but not used [XDeclaredButNotUsed]
+CC: xiny.nim
+Hint:  [Link]
+Hint: gc: refc; opt: none (DEBUG BUILD, `-d:release` generates faster code)
+26782 lines; 0.695s; 31.727MiB peakmem; proj: /home/efm/git/nim-learning/xiny.nim; out: /home/efm/git/nim-learning/xiny [SuccessX]
+Hint: /home/efm/git/nim-learning/xiny  [Exec]
+We have Milk and 3 other drinks
+```
