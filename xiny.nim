@@ -87,3 +87,18 @@ var
 john.age = newage # but still works because int and Age are synonyms.
 
 ## Second compile
+
+type
+  Cash = distinct int    # `distinct` makes a new type incompatible with its
+  Desc = distinct string # base type.
+
+var
+  money: Cash = 100.Cash # `.Cash` converts the int to our type
+  description: Desc = "Interesting".Desc
+
+when compileBadCode:
+  john.age = money   # Error! age is of type int and money is Cash
+     # Error: type mismatch: got 'Cash' for 'money' but expected 'Age = int'
+  john.name = description # Compiler says: "No way!"
+     # Error: type mismatch: got 'Desc' for 'description' but expected 'Name = string'
+## Third compile
