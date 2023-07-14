@@ -111,7 +111,7 @@ when compileBadCode:
 
 type
   Color = enum cRed, cBlue, cGreen
-  Directions = enum # alternative formatting
+  Direction = enum # alternative formatting
     dNorth
     dSouth
     dEast
@@ -137,13 +137,13 @@ when compileBadCode:
 # Arrays
 
 type
-  RollCounter = ara[DieFaces, int] # Arrays are fixed length and
+  RollCounter = array[DieFaces, int] # Arrays are fixed length and
   DirNames = array[Direction, string] # indexed by any ordinal type
   Truths = array[42..44, bool]
 
 var 
   counter: RollCounter
-  DIRECTIONS: DirNames
+  directions: DirNames
   possible: Truths
 
 possible = [false, false, false] # literal arrays are created wth [V1,..,Vn]
@@ -153,8 +153,8 @@ directions[dNorth] = "Ahh, The Great White North"
 directions[dWest] = "No, don't go there"
 
 my_roll = 13
-counter[my_roll] +=1
-counter[my_roll] +=1
+counter[my_roll] += 1
+counter[my_roll] += 1
 
 var anotherArray = ["Default index", "starts at", "0"]
 
