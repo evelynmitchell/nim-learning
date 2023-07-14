@@ -161,3 +161,18 @@ var anotherArray = ["Default index", "starts at", "0"]
 # More data structures are available, including tables, sets, lists queues,
 # and crit bit trees.
 # http://nim-lang.org/docs/lib.html#collections-and-algorithms
+
+# 
+# IO and Control Flow
+#
+
+# `case`, `readLine()`
+
+echo "Read any good books lately?"
+case readLine(stdin)
+  of "no","No":
+    echo "Go to your local library."
+  of "yes", "Yes":
+    echo "Carry on, then."
+  else:
+    echo "That's great; I assume."
