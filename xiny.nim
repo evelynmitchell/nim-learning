@@ -122,4 +122,12 @@ var
 
 discard dNorth > dEast  # Enums are usually an "ordinal" type
 
+# Subranges specify a limited valid range
+
+
+type
+  DieFaces = range[1..20] # Only an int from 1 to 20 is a valid value
+
+var 
+  my_roll: Diefaces = 13
 
