@@ -102,3 +102,24 @@ when compileBadCode:
   john.name = description # Compiler says: "No way!"
      # Error: type mismatch: got 'Desc' for 'description' but expected 'Name = string'
 ## Third compile
+
+#
+# More Types and Data Structures
+#
+
+# Enumerations allow a type to have one of a limited number of values
+
+type
+  Color = enum cRed, cBlue, cGreen
+  Directions = enum # alternative formatting
+    dNorth
+    dSouth
+    dEast
+    dWest
+var 
+  orient = dNorth #`orient` is of type Direction, with the value `dNorth`
+  pixel = cGreen  #`pixel` is of type Color, with the value `cGreen`
+
+discard dNorth > dEast  # Enums are usually an "ordinal" type
+
+
