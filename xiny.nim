@@ -131,3 +131,33 @@ type
 var 
   my_roll: Diefaces = 13
 
+when compileBadCode:
+  my_roll = 23 # Error! "Error: redefinition of 'my_roll'; previous declaration here:"
+
+# Arrays
+
+type
+  RollCounter = ara[DieFaces, int] # Arrays are fixed length and
+  DirNames = array[Direction, string] # indexed by any ordinal type
+  Truths = array[42..44, bool]
+
+var 
+  counter: RollCounter
+  DIRECTIONS: DirNames
+  possible: Truths
+
+possible = [false, false, false] # literal arrays are created wth [V1,..,Vn]
+possible[42] = true
+
+directions[dNorth] = "Ahh, The Great White North"
+directions[dWest] = "No, don't go there"
+
+my_roll = 13
+counter[my_roll] +=1
+counter[my_roll] +=1
+
+var anotherArray = ["Default index", "starts at", "0"]
+
+# More data structures are available, including tables, sets, lists queues,
+# and crit bit trees.
+# http://nim-lang.org/docs/lib.html#collections-and-algorithms
